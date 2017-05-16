@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   devServer: {
     contentBase: path.join('./', ""),
-    host: "172.16.18.175",
+    //host: "172.16.18.175",
     compress: true,
     port: 9000
   },
