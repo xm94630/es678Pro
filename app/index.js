@@ -16,6 +16,8 @@ var bee = ((bee)=>{
 
     /*
      * 案例2 ES6 promise
+     * 注意观察箭头函数，其实在定义的时候，还是更加实用通用的写法
+     * 只有在作为高阶函数时候，用箭头函数才比较合适，我也要遵循这个原则
      */
     bee.caseA2 = (()=>{
 
@@ -67,6 +69,53 @@ var bee = ((bee)=>{
 
         l('我是同步代码')
     })
+
+
+    /*
+     * 案例4 案例2的简化练习
+     * 其中，cb的写法，是不是有我自己实现的promise的风格
+     */
+    bee.caseA4 = (()=>{
+
+        function getPromise() {
+            return new Promise(cb => {
+                setTimeout(() => {
+                    cb('缓缓来迟的文字（1秒后）');
+                },1000);
+            });
+        }
+
+        var promise = getPromise();
+        promise.then((str)=>{
+            l(str)
+        });
+    })
+
+
+    /*
+     * 案例5 案例3的简化练习
+     * 其实这个实现效果和案例4是比较类似的呢，有趣吧~
+     */
+    bee.caseA5 = (()=>{
+
+        function getPromise() {
+            return new Promise(cb => {
+                setTimeout(() => {
+                    cb('缓缓来迟的文字（1秒后）');
+                },1000);
+            });
+        }
+
+        async function myAsync(){
+            var str = await getPromise();
+            l(str);
+        }
+
+        myAsync();
+    })
+
+
+
 
 
 
