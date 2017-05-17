@@ -4,7 +4,7 @@ require("babel-polyfill");
  * ES6 
  * ES7 **操作符、[].includes方法
  * ES8 async/await
- * stage-0 
+ * stage-0 ::操作符
  * stage-1 decorators（暂停实用了）、class的静态方法添加
  * stage-2 ...操纵符（仅此一个，非常实用）
  * stage-3 async/await（我觉得处理异步的语法糖都是很棒的）
@@ -259,6 +259,40 @@ var bee = ((bee)=>{
         l(fish);
         Fish.run();
     })
+
+
+    /*
+     * 案例14 ::操作符
+     * stage-0中的特有，必须要添加这个插件的
+     */
+    bee.caseA14 = (()=>{
+        
+        var obj = {
+            a:'lala'
+        }
+        function func(){
+            l(this.a);
+        }
+
+        //两个等效
+        obj::func();
+        func.bind(obj)();
+    })
+
+
+    /*
+     * 案例15 AsyncIterator
+     */
+    bee.caseA15 = (()=>{
+        //...
+    })()
+
+
+
+
+
+
+
 
 
     return bee;
