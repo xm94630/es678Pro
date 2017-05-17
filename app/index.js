@@ -115,6 +115,35 @@ var bee = ((bee)=>{
     })
 
 
+    /*
+     * 案例6 ES8 平方、开根号的新的写法 
+     */
+    bee.caseA6 = (()=>{
+
+        var a = 4**2;
+        var b = 4**(1/2);
+        l(a)
+        l(b)
+    })
+
+
+    /*
+     * 案例7 ...操作符 ``操作符
+     */
+    bee.caseA7 = (()=>{
+
+        function list(name,citems){
+            var arr = items.map((one)=>`<span>${one}</span>`);
+            return `<div class="myBox">${name} ${arr.join(' ')}</div>`
+        }
+        
+        var html = list('兰陵王',200,300);
+        document.write(html);
+    })
+
+
+
+
 
 
 
