@@ -1,5 +1,17 @@
 require("babel-polyfill");
 
+/*****************************************************************************************
+ * ES6 
+ * ES7 **操作符、[].includes方法
+ * ES8 async/await
+ * stage-0 
+ * stage-1 decorators（暂停实用了）、class的静态方法添加
+ * stage-2 ...操纵符（仅此一个，非常实用）
+ * stage-3 async/await（我觉得处理异步的语法糖都是很棒的）
+ * stage-4 
+ *****************************************************************************************/
+
+
 var l = function(){
     return console.log.apply(console,arguments);
 }
@@ -209,12 +221,44 @@ var bee = ((bee)=>{
 
         //单个获取值的方法
         l(myMap.get("兰陵王"))
-    })()
+    })
 
 
+    /*
+     * 案例11 ES8 字符串的新方法 padStart、padEnd
+     */
+    bee.caseA11 = (()=>{
+
+        l('|'.padStart(5,'&').padEnd(10,'%')) // 输出：&&&&|%%%%%
+        //这里的5表示一直填充到下表为5的位置！当然要排除掉源字符串的占用位置
+    })
 
 
+    /*
+     * 案例12 ES8 SharedArrayBuffer、 ArrayBuffer 
+     */
+    bee.caseA12 = (()=>{
+        //...
+    })
 
+
+    /*
+     * 案例13 class的静态方法添加
+     * stage-1中的内容，必须要添加这个插件的
+     */
+    bee.caseA13 = (()=>{
+        class Fish{
+            static run = function(){
+                l('鱼都会跑~')
+            };
+            constractor(){
+                this.age = 100;
+            }
+        }
+        var fish = new Fish();
+        l(fish);
+        Fish.run();
+    })
 
 
     return bee;

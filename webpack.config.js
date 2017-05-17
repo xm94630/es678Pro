@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   devServer: {
     contentBase: path.join('./', ""),
-    //host: "172.16.18.175",
+    //host: "172.16.16.249",
     compress: true,
     port: 9000
   },
@@ -20,7 +20,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env','es2015','es2016','es2017']
+            presets: ['env','es2015','es2016','es2017',"stage-1"]
           }
         }
       }
