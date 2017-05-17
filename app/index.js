@@ -116,7 +116,7 @@ var bee = ((bee)=>{
 
 
     /*
-     * 案例6 ES8 平方、开根号的新的写法 
+     * 案例6 ES7 平方、开根号的新的写法 
      */
     bee.caseA6 = (()=>{
 
@@ -128,7 +128,7 @@ var bee = ((bee)=>{
 
 
     /*
-     * 案例7 ...操作符 ``操作符
+     * 案例7 ES7 ...操作符 ``操作符
      */
     bee.caseA7 = (()=>{
 
@@ -142,7 +142,66 @@ var bee = ((bee)=>{
     })
 
 
+    /*
+     * 案例8 ES78 decorator
+     * 目前这个 decorator 的使用似乎有点问题
+     * 在babal官网上测试，也是不行的，不知道是怎么回事？还是说是typescript的产物
+     */
+    bee.caseA8 = (()=>{
 
+        /*class Mat {
+            @log
+            add(a, b) {
+             return a + b;
+            }
+            @log
+            subtract(a,b){
+             return a - b;
+            }
+        }
+        var m = new Mat();
+        m.add(2,3)
+        m.subtract(2,3)*/
+    })
+
+
+    /*
+     * 案例9 ES7 Object.entries
+     * 将对象处理成比较特殊的数组形式，然后就可以使用在迭代函数的参数中使用 [key,value] 形式
+     * 注意：返回的新数组和普通的数据是有些区别的，普通的数据即使内容和它一样，也是不能使用 [key,value] 的。
+     */
+    bee.caseA9 = (()=>{
+
+        var kings = {
+            'llw':{
+                name:"兰陵王",
+                type:"刺客"
+            },
+            'cyj':{
+                name:"程咬金",
+                type:"坦克"
+            }
+        }
+        var arr = Object.entries(kings)
+        l(arr)
+
+        var html = arr.map(([key,value])=>
+            `<li>${key} ${value.name} ${value.type}</li>`
+            ).join('\n')
+        document.write(`<ul>${html}</li>`);
+    })
+
+
+
+    /*
+     * 案例10
+     */
+    bee.caseA10 = (()=>{
+
+
+
+
+    })()
 
 
 
