@@ -319,8 +319,20 @@ body a {
 }
 
 
-
-
+.box{
+  width: 800px;
+  height: 100px;
+  background: #ddd;
+  margin: 0 auto;
+  transition:all 0.5s;
+  position: relative;
+  left:0px;
+}
+.box:hover{
+  position: relative;
+  left:100px;
+  transition:all 0.5s;
+}
 
 
 

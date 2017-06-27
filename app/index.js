@@ -1,4 +1,5 @@
 require("babel-polyfill");
+const { Map } = require('immutable')
 
 /*****************************************************************************************
  * ES6 
@@ -285,9 +286,18 @@ var bee = ((bee)=>{
      */
     bee.caseA15 = (()=>{
         //...
+    })
+
+
+    /*
+     * 案例16 immutable.js 学习
+     */
+    bee.caseA16 = (()=>{
+        const map1 = Map({ a: 1, b: 2, c: 3 })
+        const map2 = map1.set('b', 50)
+        l(map1.get('b')) // 2
+        l(map2.get('b')) // 50
     })()
-
-
 
 
 
